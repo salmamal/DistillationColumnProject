@@ -4,7 +4,7 @@ function x = succesive_substitution(func, x0, tol)
   iter = 0;
   while error > tol
     x_new = func(x);
-    error = abs(x_new - x);
+    error = (abs((x_new - x)/x_new))*100;
     x = x_new;
     iter = iter + 1;
   end
